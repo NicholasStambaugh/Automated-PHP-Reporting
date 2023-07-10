@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Reporting Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Automated Reporting Application</h1>
+    <form id="reportForm">
+        <label for="source">Data Source:</label>
+        <select id="source" name="source">
+            <option value="source1">Source 1</option>
+            <option value="source2">Source 2</option>
+            <option value="source3">Source 3</option>
+        </select>
+        <br>
+        <label for="analysisType">Analysis Type:</label>
+        <select id="analysisType" name="analysisType">
+            <option value="type1">Type 1</option>
+            <option value="type2">Type 2</option>
+            <option value="type3">Type 3</option>
+        </select>
+        <br>
+        <label for="reportFrequency">Report Frequency:</label>
+        <select id="reportFrequency" name="reportFrequency">
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <br>
+        <button type="submit">Generate Report</button>
+    </form>
+    <div id="reportContainer"></div>
+    <script>
+        document.getElementById("reportForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var source = document.getElementById("source").value;
+            var analysisType = document.getElementById("analysisType").value;
+            var reportFrequency = document.getElementById("reportFrequency").value;
+            generateReport(source, analysisType, reportFrequency);
+        });
+        
+        function generateReport(source, analysisType, reportFrequency) {
+            // Make AJAX request to data_fetcher.php with source parameter
+            // Perform data analysis using data_analysis.py with analysisType parameter
+            // Generate report using report_generator.php with source, analysisType, and reportFrequency parameters
+            // Display the generated report in the reportContainer
+        }
+    </script>
+</body>
+</html>
